@@ -1,0 +1,11 @@
+temp_matrix <- matrix(
+  c(5, 6, 7, 8, 9,   # City A
+    10, 11, 12, 13, 14,  # City B
+    15, 16, 17, 18, 19), # City C
+  nrow = 5,
+  ncol = 3
+)
+rownames(temp_matrix) <- c("Jan", "Feb", "Mar", "Apr", "May")
+colnames(temp_matrix) <- c("City A", "City B", "City C")
+heatmap(temp_matrix, Rowv = NA, Colv = NA, col = heat.colors(10), scale = "none",
+        main = "Heatmap of Monthly Temperatures", xlab = "City", ylab = "Month")
