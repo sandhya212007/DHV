@@ -1,13 +1,14 @@
 library(ggplot2)
 scores_data <- data.frame(
-  Class = c("A", "A", "A", "A", "B", "B", "B", "B"),
-  Scores = c(85, 90, 78, 92, 88, 76, 80, 84)
+  Group = c("X", "X", "X", "X", "Y", "Y", "Y", "Y"),
+  Score = c(80, 85, 78, 92, 88, 76, 80, 84)
 )
-ggplot(scores_data, aes(x = Class, y = Scores, fill = Class)) +
-  geom_boxplot() +
+ggplot(scores_data, aes(x = Group, y = Score, fill = Group)) +
+  geom_violin(trim = FALSE, alpha = 0.6) +  # Violin plot with transparency
+  geom_jitter(width = 0.1, size = 2, color = "black") + 
   labs(
-    title = "Exam Scores by Class",
-    x = "Class",
-    y = "Scores"
+    title = "Violin Plot of Scores by Group",
+    x = "Group",
+    y = "Score"
   ) +
-  theme_minimal()
+  theme_minimal()  
